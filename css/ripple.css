@@ -1,0 +1,82 @@
+* {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+body {
+	background: #2D3539;
+}
+
+h1 {
+	display: flex;
+	justify-content: center;
+}
+
+ul {
+	width: 200px;
+	margin: 0 auto;
+}
+ul li {
+	list-style-type: none;
+	/*relative positioning for list items along with overflow hidden to contain the overflowing ripple*/
+	position: relative;
+	overflow: hidden;
+	background: #7F2954;
+	margin: 10px;
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+	box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+}
+ul li a {
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	/*prevent text selection*/
+	user-select: none;
+	position: relative;
+}
+
+.main {
+	display: flex;
+
+}
+
+.ripple {
+	display: block;
+	position: absolute;
+	background: hsl(180, 40%, 80%);
+	border-radius: 100%;
+	transform: scale(0);
+}
+
+.ripple.animate {
+	-webkit-animation: ripple 0.65s linear;
+  	-moz-animation: ripple 0.65s linear;
+  	-ms-animation: ripple 0.65s linear;
+  	-o-animation: ripple 0.65s linear;
+  	animation: ripple 0.65s linear;
+}
+ @-webkit-keyframes 
+ripple {  
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(2.5);
+	}
+}
+@-moz-keyframes 
+ripple {
+	100% {
+		opacity: 0;
+		-moz-transform: scale(2.5);
+	}
+}
+@-o-keyframes 
+ripple {
+	100% {
+		opacity: 0;
+		-o-transform: scale(2.5);
+	}
+}
